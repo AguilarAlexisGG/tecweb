@@ -1,5 +1,5 @@
 <?php
-    include(“encabezado.inc.php"); 
+    include("encabezado.inc.php"); 
     echo "<hr />";
     include_once("cuerpo.inc.php"); 
     require("cuerpo.html");
