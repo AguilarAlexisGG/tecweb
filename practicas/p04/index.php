@@ -99,7 +99,7 @@
         echo $a.'<br>';
         echo $b.'<br>';
         echo $c.'<br>';
-/*
+
         unset($a);
         unset($b);
         unset($c);
@@ -120,8 +120,19 @@
         var_dump($d); echo '<br>';
         var_dump($e); echo '<br>';
         var_dump($f); echo '<br>';
-*/
-    
+       
+        echo '<p><h4>Después investiga una función de PHP que permita transformar el valor booleano de $c y $e 
+        en uno que se pueda mostrar con un echo: </h6><p/>';
+
+        //echo (bool) $a ? 'true' : 'false'; echo '<br>';
+        //echo (bool) $b ? 'true' : 'false'; echo '<br>';
+        echo (bool) $c ? 'true' : 'false'; echo '<br>';
+        //echo (bool) $d ? 'true' : 'false'; echo '<br>';
+        echo (bool) $e ? 'true' : 'false'; echo '<br>';
+        //echo (bool) $f ? 'true' : 'false'; echo '<br>';
+
+        echo '<p><h4> 7. Usando la variable predefinida $_SERVER, determina lo siguiente:</h6><p/>';
+
     ?>
 </body>
 </html>
