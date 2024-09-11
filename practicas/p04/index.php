@@ -50,7 +50,7 @@
         echo '<p>Respuesta: Asignamos otro valor a la varible 
             $a y despues le asignamos a $b el valor de la 
             variable $a por referncia </p>';
-/*
+
         unset($a);
         unset($b);
         unset($c);
@@ -62,17 +62,15 @@
             echo '<br>';
         $b = "5a version de PHP";
             echo $b.'<br>';
-        $c = $b*10;
+        @$c = $b*10;
             echo $c.'<br>';
         $a .= $b;
             echo $a.'<br>';
-        $b *= $c;
+        @$b *= $c;
             echo $b.'<br>';
         $z[0] = "MySQL";
             print_r($z);
             echo '<br>';
-*/
-
     ?>
 </body>
 </html>
