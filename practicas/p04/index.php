@@ -17,7 +17,8 @@
         $var7;
         $_element1;
         //$house*5;     // InvalidaSSS
-        
+
+        echo '<br><h4><p>1. Determina cuál de las siguientes variables son válidas y explica por qué: <p/></h4>';
         echo '<h4>Respuesta:</h4>';   
     
         echo '<ul>';
@@ -30,6 +31,7 @@
         echo '<li>$house*5 es inválida porque el símbolo * no está permitido.</li>';
         echo '</ul>';
 
+        echo '<br><h4><p>2. Proporcionar los valores de $a, $b, $c como sigue:<p/></h4>';
         $a = "ManejadorSQL";
         $b = 'MySQL';
         $c = &$a;
@@ -55,6 +57,8 @@
         unset($b);
         unset($c);
 
+        echo '<br><h4><p>3. Muestra el contenido de cada variable inmediatamente después de cada asignación,
+        verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo): <p/></h4>';
         $a = "PHP5";
             echo $a.'<br>';
         $z[] = &$a;
@@ -71,6 +75,20 @@
         $z[0] = "MySQL";
             print_r($z);
             echo '<br>';
+
+        echo '<br>';
+
+        echo '<br><h4><p>4. Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+        la matriz $GLOBALS o del modificador global de PHP.<p/></h4>';
+        function mostrar(){
+            echo '$a en el ambito global: '.$GLOBALS['a'].'<br>';
+            echo '$b en el ambito global: '.$GLOBALS['b'].'<br>';
+            echo '$c en el ambito global: '.$GLOBALS['c'].'<br>';
+            echo '$z en el ambito global: ';
+            print_r ($GLOBALS['z']) ;
+
+        }        
+        mostrar();
     ?>
 </body>
 </html>
