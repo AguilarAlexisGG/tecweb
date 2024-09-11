@@ -16,7 +16,7 @@
         $myvar;
         $var7;
         $_element1;
-        //$house*5;     // Invalida
+        //$house*5;     // InvalidaSSS
         
         echo '<h4>Respuesta:</h4>';   
     
@@ -31,47 +31,47 @@
         echo '</ul>';
 
         $a = "ManejadorSQL";
-$b = 'MySQL';
-$c = &$a;
+        $b = 'MySQL';
+        $c = &$a;
 
-echo $a.'<br>';
-echo $b.'<br>';
-echo $c.'<br>';
+        echo $a.'<br>';
+        echo $b.'<br>';
+        echo $c.'<br>';
 
-echo '<br>';
+        echo '<br>';
 
-$a = "PHP server";
-$b = &$a;
+        $a = "PHP server";
+        $b = &$a;
 
-echo $a.'<br>';
-echo $b.'<br>';
+        echo $a.'<br>';
+        echo $b.'<br>';
 
 
-echo '<p>Respuesta: Asignamos otro valor a la varible 
-	$a y despues le asignamos a $b el valor de la 
-	variable $a por referncia </p>';
+        echo '<p>Respuesta: Asignamos otro valor a la varible 
+            $a y despues le asignamos a $b el valor de la 
+            variable $a por referncia </p>';
+/*
+        unset($a);
+        unset($b);
+        unset($c);
 
-unset($a);
-unset($b);
-unset($c);
-
-$a = "PHP5";
-	echo $a.'<br>';
-$z[] = &$a;
-	print_r($z);
-	echo '<br>';
-$b = "5a version de PHP";
-	echo $b.'<br>';
-$c = $b*10;
-	echo $c.'<br>';
-$a .= $b;
-	echo $a.'<br>';
-$b *= $c;
-	echo $b.'<br>';
-$z[0] = "MySQL";
-	print_r($z);
-	echo '<br>';
-
+        $a = "PHP5";
+            echo $a.'<br>';
+        $z[] = &$a;
+            print_r($z);
+            echo '<br>';
+        $b = "5a version de PHP";
+            echo $b.'<br>';
+        $c = $b*10;
+            echo $c.'<br>';
+        $a .= $b;
+            echo $a.'<br>';
+        $b *= $c;
+            echo $b.'<br>';
+        $z[0] = "MySQL";
+            print_r($z);
+            echo '<br>';
+*/
 
     ?>
 </body>
