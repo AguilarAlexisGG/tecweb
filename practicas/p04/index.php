@@ -18,8 +18,7 @@
         $_element1;
         //$house*5;     // InvalidaSSS
 
-        echo '<br><h4><p>1. Determina cuál de las siguientes variables son válidas y explica por qué: <p/></h4>';
-        echo '<h4>Respuesta:</h4>';   
+        echo '<br><h4><p>1. Determina cuál de las siguientes variables son válidas y explica por qué: <p/></h4>'; 
     
         echo '<ul>';
         echo '<li>$_myvar es válida porque inicia con guión bajo.</li>';
@@ -38,16 +37,18 @@
 
         echo $a.'<br>';
         echo $b.'<br>';
-        echo $c.'<br>';
+        echo $c;
 
-        echo '<br>';
-
+        echo '<br><h4><p>b. Agrega al código actual las siguientes asignaciones:<p/></h4>';
+        
         $a = "PHP server";
         $b = &$a;
 
         echo $a.'<br>';
         echo $b.'<br>';
 
+        echo '<br><h4><p>d. Describe en y muestra en la página obtenida qué ocurrió en el 
+        segundo bloque de asignaciones<p/></h4>';
 
         echo '<p>Respuesta: Asignamos otro valor a la varible 
             $a y despues le asignamos a $b el valor de la 
@@ -76,8 +77,6 @@
             print_r($z);
             echo '<br>';
 
-        echo '<br>';
-
         echo '<br><h4><p>4. Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
         la matriz $GLOBALS o del modificador global de PHP.<p/></h4>';
         function mostrar(){
@@ -91,6 +90,7 @@
         mostrar();
 
         echo '<br><h4><p>5. Dar el valor de las variables $a, $b, $c al final del siguiente script: <p/></h4>';
+       
         $a = "7 personas";
         $b = (integer) $a;
         $a = "9E3";
@@ -103,6 +103,7 @@
         unset($a);
         unset($b);
         unset($c);
+        unset($z);
 
         echo '<br><h4><p>6. Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y 
         muéstralas usando la función var_dump(<datos>). <p/></h4>';
@@ -132,6 +133,15 @@
         //echo (bool) $f ? 'true' : 'false'; echo '<br>';
 
         echo '<p><h4> 7. Usando la variable predefinida $_SERVER, determina lo siguiente:</h6><p/>';
+        echo '<p><h4>a. La versión de Apache y PHP.</h6><p/>';
+
+        echo $_SERVER['SERVER_SOFTWARE'];
+        
+        echo '<p><h4>b. El nombre del sistema operativo (servidor).</h6><p/>';
+        echo PHP_OS;
+
+        echo '<p><h4>c. El idioma del navegador (cliente).</h6><p/>';
+        echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
     ?>
 </body>
