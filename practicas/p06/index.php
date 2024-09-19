@@ -8,8 +8,8 @@
 <body>
     <h2>Ejercicio 1</h2>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
-    <?php
-        include 'src/funciones.php';
+    <?php 
+    include 'src/funciones.php';
         if(isset($_GET['numero']))
         {
             $num = $_GET['numero'];
@@ -23,7 +23,27 @@
             }
         }
     ?>
-    
+
+    <h2>Ejercicio 2</h2>
+    <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
+    secuencia compuesta por:</p>
+    <?php
+        list($secuencias, $iteraciones) = generarNumerosAleatorios();
+        echo "<h2>Secuencias Generadas</h2>";
+        echo "<table>";
+        echo "<tr><td>IMPAR</td><td>PAR</td><td>IMPAR</td></tr>";
+        foreach ($secuencias as $secuencia) {
+            echo "<tr>";
+            foreach ($secuencia as $num) {
+                echo "<td>$num</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";    
+        $totalNum = $iteraciones * 3;
+        echo "<p>$totalNum números obtenidos en $iteraciones iteraciones</p>";
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
