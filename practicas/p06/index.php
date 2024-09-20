@@ -43,6 +43,7 @@
         $totalNum = $iteraciones * 3;
         echo "<p>$totalNum números obtenidos en $iteraciones iteraciones</p>";
     ?>
+
     <h2>Ejercicio 3</h2>
     <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
     pero que además sea múltiplo de un número dado.</p>
@@ -55,15 +56,44 @@
             echo '<p>Con DoWhile tenemos el número '.$numero.' en '.$iteraciones.' iteraciones</p>';
         }
     ?>
+
     <h2>Ejercicio 4</h2>
-    <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’
-    a la ‘z’.</p>
+    <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’ a la ‘z’.</p>
     <?php
         $ascii = valoresAscii();
         foreach ($ascii as $key => $value) {
             echo '['.$key.'] =>'.$value.'<br>';
         }
+        
     ?>
+
+    <h2>Ejercicio 5</h2>
+    <p>Identificar si una persona es de sexo “femenino”, cuya edad oscile entre los 18 y 35 años</p> 
+    <form action="" method="post">
+        Sexo: 
+        <select name="sexo" id="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select><br>
+        Edad: 
+        <input type="number" name="edad" id="edad"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <?php
+        if(isset($_POST['sexo'])&isset($_POST['edad'])){
+            $sexo = $_POST['sexo'];
+            $edad = $_POST['edad'];
+            if ($sexo == "femenino" && $edad >= 18 && $edad <= 35) {
+                echo "<p>Bienvenida, usted está en el rango de edad permitido.</p>";
+            } else {
+                echo "<p>Error: Sus datos no cumplen con los requisitos .</p>";
+            }
+        }        
+    ?>
+    
+
+
+
 
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
