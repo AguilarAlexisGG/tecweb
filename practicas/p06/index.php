@@ -30,7 +30,7 @@
     <?php
         list($secuencias, $iteraciones) = generarNumerosAleatorios();
         echo "<h3>Secuencias</h3>";
-        echo "<table>";
+        echo "<table border='1'>";
         echo "<tr><td>IMPAR</td><td>PAR</td><td>IMPAR</td></tr>";
         foreach ($secuencias as $secuencia) {
             echo "<tr>";
@@ -56,7 +56,15 @@
         }
     ?>
     <h2>Ejercicio 4</h2>
-    <p></p>
+    <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la ‘a’
+    a la ‘z’.</p>
+    <?php
+        $ascii = valoresAscii();
+        foreach ($ascii as $key => $value) {
+            echo '['.$key.'] =>'.$value.'<br>';
+        }
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>

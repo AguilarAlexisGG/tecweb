@@ -51,4 +51,13 @@ function multiploPorDoWhile($multi){
 
     return [$num1, $iteraciones];
 }
+
+function valoresAscii(){
+    $arrregloAscii = [];
+    for($n = 97; $n<= 122; $n++){
+        $letra = chr($n);
+        $arrregloAscii[$n] = $letra;
+    }
+    return $arrregloAscii;
+}
 ?>
