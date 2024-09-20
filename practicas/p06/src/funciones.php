@@ -29,4 +29,26 @@ function generarNumerosAleatorios() {
     return [$secuencias, $iteraciones];
 }
 
+function multiploPorWhile($multi){
+    $esMultiplo = false;
+    $iteraciones = 0;
+    while(!$esMultiplo){
+        $iteraciones++;
+        $num1 = rand(1, 1000);
+        if(($num1%$multi)==0){
+            $esMultiplo = true;
+        }
+    }
+    return [$num1, $iteraciones];
+}
+
+function multiploPorDoWhile($multi){
+    $iteraciones = 0;
+    do{
+        $iteraciones++;
+        $num1 = rand(1, 1000);
+    }while(($num1%$multi)!=0);
+
+    return [$num1, $iteraciones];
+}
 ?>

@@ -29,7 +29,7 @@
     secuencia compuesta por:</p>
     <?php
         list($secuencias, $iteraciones) = generarNumerosAleatorios();
-        echo "<h2>Secuencias Generadas</h2>";
+        echo "<h3>Secuencias</h3>";
         echo "<table>";
         echo "<tr><td>IMPAR</td><td>PAR</td><td>IMPAR</td></tr>";
         foreach ($secuencias as $secuencia) {
@@ -43,7 +43,20 @@
         $totalNum = $iteraciones * 3;
         echo "<p>$totalNum números obtenidos en $iteraciones iteraciones</p>";
     ?>
-
+    <h2>Ejercicio 3</h2>
+    <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
+    pero que además sea múltiplo de un número dado.</p>
+    <?php
+        if(isset($_GET['multiplo'])){
+            $multiplo=$_GET['multiplo'];
+            list($numero, $iteraciones) = multiploPorWhile($multiplo);
+            echo '<p>Con While tenemos el número '.$numero.' en '.$iteraciones.' iteraciones</p>';
+            list($numero, $iteraciones) = multiploPorDoWhile($multiplo);
+            echo '<p>Con DoWhile tenemos el número '.$numero.' en '.$iteraciones.' iteraciones</p>';
+        }
+    ?>
+    <h2>Ejercicio 4</h2>
+    <p></p>
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
