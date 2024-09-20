@@ -288,11 +288,13 @@
     </form>
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ($_POST['consulta'] == "Por Matricula" && !empty($_POST['matricula'])) {
+            $consulta = $_POST['consulta'];
+            $matricula = $_POST['matricula'];
+            if ($consulta == "Por Matricula" && !empty($matricula)) {
                 $matricula = $_POST['matricula'];
-                if (isset($parqueVehicular[$_POST['matricula']])) {
+                if (isset($parqueVehicular[$matricula])) {
                     $vehiculo = $parqueVehicular[$matricula];
-                    echo "<h2>Vehículo con Matrícula $matricula</h2>";
+                    echo "<h3>Vehículo con Matrícula $matricula</h3>";
                     echo "<p>Marca: " . $vehiculo['Auto']['Marca'] . "</p>";
                     echo "<p>Modelo: " . $vehiculo['Auto']['Modelo'] . "</p>";
                     echo "<p>Tipo: " . $vehiculo['Auto']['Tipo'] . "</p>";
