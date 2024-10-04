@@ -23,7 +23,7 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
 }
 
 /** SE CREA EL OBJETO DE CONEXION */
-$link = new mysqli('localhost', 'root', 'sapo123', 'marketzone');	
+@$link = new mysqli('localhost', 'root', 'sapo123', 'marketzone');	
 
 /** comprobar la conexión */
 if ($link->connect_errno) 
@@ -58,4 +58,6 @@ if($row[0]=="0")
     echo 'Ya existe un registro con los valores Nombre, Maraca y Modelo';
 }
 
+$result->free();
+$link->close();
 ?>
