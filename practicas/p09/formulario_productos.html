@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro De Productos</title>
+  </head>
+
+  <body>
+    <h1>Registro De Productos</h1>
+    
+    <form action="set_productos_v2.php" method="post" enctype="multipart/form-data">
+      
+      <fieldset>
+        <legend><p>Información del Producto</p></legend>
+
+        <ul>
+          <li>Nombre: <input type="text" name="nombre"></li>
+          <li>Marca: <input type="text" name="marca"></li>
+          <li>Modelo: <input type="text" name="modelo"></li>
+          <li>Precio: <input type="number" name="precio"></li>
+          <li>Detalles: <input type="text" name="detalles"></li> 
+          <li>Unidades: <input type="number" name="unidades"></li>         
+          <li>Imagen: <input type="file" name="imagen" accept="image/png, image/jpeg"></li>
+        </ul>
+      </fieldset>
+
+      <p>
+        <input type="submit" value="Agregar">
+        <input type="reset" value="Limpiar">
+      </p>
+    </form>
+
+  </body>
+</html>
