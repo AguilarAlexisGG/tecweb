@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Simple</title>
+</head>
+<body>
+    <script>
+        function sendRequest() {
+            var client = new XMLHttpRequest();
+            /** 
+             * SOLICITUD AL SERVIDOR:
+             *  Prototipo de open:      XMLHttpRequest.open(method, url, async)
+             *  ver https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open 
+             * */
+            client.open('POST', './backend.php', false);
+            /**
+             * TIPO DE DATOS SOLICITADOS
+             * */
+            client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            /**
+             * SEGUIMIENTO DE LOS DATOS RECIBIDOS DEL SERVIDOR
+             * */
+            client.onreadystatechange = function () {
+                //console.log(client.responseText);
+                document.getElementById('titulo').innerHTML = client.responseText;
+            };
+            /**
+             * SE ENVÍA LA SOLICITUD CON LAS CONSIDERACIONES ANTERIORES
+             * */
+            client.send("usuario=elelegido&password=12345678a");
+        }
+    </script>
+
+    <h1 id="titulo"></h1>
+
+    <button onclick="sendRequest()">
+        Hola Mundo
+    </button>
+</body>
+</html>
