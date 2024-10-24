@@ -14,12 +14,13 @@
             detalles like '%{$id}%'
             ") ) {
             // SE OBTIENEN LOS RESULTADOS
-			$row = $result->fetch_array(MYSQLI_ASSOC);
+			$row = $result->fetch_all(MYSQLI_ASSOC);
 
             if(!is_null($row)) {
                 // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
                 foreach($row as $key => $value) {
-                    $data[$key] = utf8_encode($value);
+                    //$data[$key] = utf8_encode($value);
+                    $data[$key] = mb_convert_encoding($value, 'UTF-8', 'auto');
                 }
             }
 			$result->free();

@@ -73,6 +73,10 @@ function agregarProducto(e) {
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
 
+    if(!validar(finalJSON)){
+        return;
+    }
+
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
     client.open('POST', './backend/create.php', true);
@@ -81,6 +85,12 @@ function agregarProducto(e) {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
             console.log(client.responseText);
+            let response = JSON.parse(client.responseText);
+			if (response.status === "success") {
+				alert("Producto agregado correctamente.");
+			} else {
+				alert(response.message);
+			}
         }
     };
     client.send(productoJsonString);
@@ -131,9 +141,10 @@ function buscarProducto(e){
         if (client.readyState == 4 && client.status == 200){
             console.log('[CLIENTE]\n' + client.responseText);
             let productos = JSON.parse(client.responseText);
+            document.getElementById("productos").innerHTML = "";
             if (Object.keys(productos).length > 0){
                 let template = '';
-                productos.forEach((producto) =>{
+                productos.forEach(producto =>{
                     let descripcion = "";
 					descripcion += "<li>precio: " + producto.precio + "</li>";
 					descripcion += "<li>unidades: " + producto.unidades + "</li>";
@@ -146,9 +157,11 @@ function buscarProducto(e){
                             <td>${producto.nombre}</td>
                             <td><ul>${descripcion}</ul></td>
                         </tr>
-                    `;
+                    `;                    
                 });
                 document.getElementById("productos").innerHTML = template;
+            }else{
+                console.log("No se encontraron productos");
             }
         }
     }
@@ -160,64 +173,75 @@ function validar(JSON){
     //NOMBRE
     //let nombre = document.getElementById("nombre").value.trim();
     if(!JSON.nombre || JSON.nombre.length == 0){
+        alert("Nombre Obligatorio");
         console.log("Nombre Obligatorio");
         esValido = false;
     }
     else if(JSON.nombre.length > 100){
+        alert("Nombre muy largo");
         console.log("Nombre muy largo");
         esValido = false;
     }
 //MARCA
     //let marca = document.getElementById("marca").value.trim();
     let marcas = ["DeWalt", "IUSA", "BELLOTA", "TRUPER", "PHILLIPS", "FIERO", "COFLEX"];
-    if(!JSON.marca || JSON.marca,length == 0){
-        console.log("Marca Obligatortio");
+    if(!JSON.marca || JSON.marca.length == 0){
+        alert("Marca Obligatortia");
+        console.log("Marca Obligatortia");
         esValido = false;
     }else if(!marcas.includes(JSON.marca)){
+        alert("La marca no es valida");
         console.log("La marca no es valida");
         esValido = false;
     }
 //MODELO
     //let modelo = document.getElementById("modelo").value.trim();
     //let patronModelo = /^[a-zA-Z0-9\s]+$/;
-    if(!JSON.modelo||  JSON.modelo.length == 0     ){
+    if(!JSON.modelo||  JSON.modelo.length == 0){
+        alert("El modelo es obligatorio");
         console.log("El modelo es obligatorio");
         esValido = false;
     }else if(!/^[a-zA-Z0-9\s]+$/.test(JSON.modelo) || JSON.modelo.length > 25){
-        console.log("Debe ser alfanumérico y maximo 25 caracteres.");
+        alert("El modelo debe ser alfanumérico y maximo 25 caracteres.");
+        console.log("El modelo debe ser alfanumérico y maximo 25 caracteres.");
         esValido = false;
     }
 //PRECIO
-    let precio = parseFloat(document.getElementById("precio").value.trim());
-
-    if(isNaN(precio)){
-        document.getElementById("error-precio").innerHTML = "<p>Precio Obligatortio</p>";
+    //let precio = parseFloat(document.getElementById("precio").value.trim());
+    if(isNaN(JSON.precio)){
+        alert("Precio Obligatortio");
+        console.log("Precio Obligatortio");
         esValido = false;
     }
-    else if(precio <= 99.99){
-        document.getElementById("error-precio").innerHTML = "<p>Debe ser mayor a 99.99</p>";
+    else if(JSON.precio <= 99.99){
+        alert("Precio debe ser mayor a 99.99");
+        console.log("Precio debe ser mayor a 99.99");
         esValido = false;
     } 
 //DETALLES
-    let detalles = document.getElementById("detalles").value.trim();
-    if(detalles.length > 250){
-        document.getElementById("error-detalles").innerHTML = "<p>Debe tener 250 caracteres o menos.</p>"
+    //let detalles = document.getElementById("detalles").value.trim();
+    if(JSON.detalles && JSON.detalles.length > 250){
+        alert("Los detalles deben tener 250 caracteres o menos.");
+        console.log("Los detalles deben tener 250 caracteres o menos.");
         esValido = false;
     }
 //UNIDADES
-    let unidades = parseFloat(document.getElementById("unidades").value);
-    if(isNaN(unidades)){
-        document.getElementById("error-unidades").innerHTML = "<p>Unidades Obligatortio</p>";
+    //let unidades = parseFloat(document.getElementById("unidades").value);
+    if(isNaN(JSON.unidades)){
+        alert("Unidades Obligatortio");
+        console.log("Unidades Obligatortio");
         esValido = false;
     }
-    else if(unidades < 0){
-        document.getElementById("error-unidades").innerHTML = "<p>Debe ser mayor o igual a 0</p>";
+    else if(JSON.unidades < 0){
+        alert("Unidades debe ser mayor o igual a 0");
+        console.log("Unidades debe ser mayor o igual a 0");
         esValido = false;
     } 
 //IMAGEN
-    let imagen = document.getElementById("imagen").value.trim();
-    if (imagen == "") {
-        imagen = "img/imagen.png";
+    //let imagen = document.getElementById("imagen").value.trim();
+    if (!JSON.imagen || JSON.imagen.length == 0) {
+        JSON.imagen = "img/imagen.png";
+        console.log("Ruta de Imagen Predeterminada");
     }
-    esValido = false;
+    return esValido;
 }
