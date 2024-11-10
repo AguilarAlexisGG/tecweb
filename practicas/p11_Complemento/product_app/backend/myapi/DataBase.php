@@ -1,17 +1,20 @@
 <?php
 namespace TECWEB\MYAPI;
 
-Class Database {
+abstract class DataBase {
     protected $conexion;  
 
-    public function __construct($user = 'root', $pass = 'sapo123', $bd = 'marketzone') {
+    public function __construct($db, $user, $pass) {
         $this->conexion = new \mysqli(
             hostname: 'localhost', 
             username: $user, 
             password: $pass, 
-            database: $bd
+            database: $db
         );
+
+        if(!$this->conexion){
+            die('Sin conexion a la base de datos');
+        }
     }
 }
-
 ?>

@@ -20,10 +20,11 @@ $(document).ready(function(){
         $.ajax({
             url: './backend/product-list.php',
             type: 'GET',
-            success: function(response) {
+            success: function(response) {                
                 // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+                //console.log(response);
                 const productos = JSON.parse(response);
-            
+                
                 // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
                 if(Object.keys(productos).length > 0) {
                     // SE CREA UNA PLANTILLA PARA CREAR LAS FILAS A INSERTAR EN EL DOCUMENTO HTML
@@ -44,7 +45,7 @@ $(document).ready(function(){
                                 <td><a href="#" class="product-item">${producto.nombre}</a></td>
                                 <td><ul>${descripcion}</ul></td>
                                 <td>
-                                    <button class="product-delete btn btn-danger" onclick="eliminarProducto()">
+                                    <button class="product-delete btn btn-danger">
                                         Eliminar
                                     </button>
                                 </td>
@@ -66,6 +67,7 @@ $(document).ready(function(){
                 data: {search},
                 type: 'GET',
                 success: function (response) {
+                    console.log(response);
                     if(!response.error) {
                         // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
                         const productos = JSON.parse(response);
@@ -137,6 +139,7 @@ $(document).ready(function(){
         $.post(url, postData, (response) => {
             //console.log(response);
             // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+            console.log(response);
             let respuesta = JSON.parse(response);
             // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
             let template_bar = '';
@@ -174,6 +177,7 @@ $(document).ready(function(){
         const id = $(element).attr('productId');
         $.post('./backend/product-single.php', {id}, (response) => {
             // SE CONVIERTE A OBJETO EL JSON OBTENIDO
+            console.log(response);
             let product = JSON.parse(response);
             // SE INSERTAN LOS DATOS ESPECIALES EN LOS CAMPOS CORRESPONDIENTES
             $('#name').val(product.nombre);

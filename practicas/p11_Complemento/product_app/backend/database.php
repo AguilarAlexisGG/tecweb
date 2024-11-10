@@ -1,15 +1,15 @@
 <?php
-    $conexion = @mysqli_connect(
+    /*$conexion = @mysqli_connect(
         'localhost',
         'root',
-        '12345678a',
+        'sapo123',
         'marketzone'
-    );
+    );*/
 
     /**
      * NOTA: si la conexión falló $conexion contendrá false
      **/
-    if(!$conexion) {
+    /*if(!$conexion) {
         die('¡Base de datos NO conextada!');
-    }
+    }*/    
 ?>
