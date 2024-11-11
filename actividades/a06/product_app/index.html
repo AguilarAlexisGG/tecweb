@@ -68,12 +68,12 @@
                       </li>
                       <li>
                         <label for="modelo">Modelo:</label>
-                        <input type="text" id="modelo" name="modelo" onblur="validarModelo()">
+                        <input type="text" id="modelo" name="modelo" onblur="validarModelo()" placeholder="ASD123">
                         <div id="error-modelo" class="error"></div>
                       </li>
                       <li>
                         <label for="precio">Precio:</label>
-                        <input type="number" id="precio" name="precio" onblur="validarPrecio()">
+                        <input type="number" id="precio" name="precio" onblur="validarPrecio()" placeholder="Mayor a 99.9">
                         <div id="error-precio" class="error"></div>            
                       </li>
                       <li>
@@ -83,7 +83,7 @@
                       </li> 
                       <li>
                         <label for="unidades">Unidades:</label>
-                        <input type="number" id="unidades" name="unidades" onblur="validarUnidades()">
+                        <input type="number" id="unidades" name="unidades" onblur="validarUnidades()" placeholder="Mayor a 0">
                         <div id="error-unidades" class="error"></div>
                       </li>         
                       <li>
@@ -91,7 +91,7 @@
                       <!--
                         <input type="file" name="imagen" id="imagen" accept="image/png, image/jpeg">
                       -->
-                        <input type="text" id="imagen" name="imagen" onblur="validarImagen()">
+                        <input type="text" id="imagen" name="imagen" onblur="validarImagen()" placeholder="Default: img/imagen.png">
                       </li>
                     </ul>
                   </fieldset>
