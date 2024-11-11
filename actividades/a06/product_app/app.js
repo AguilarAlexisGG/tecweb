@@ -325,7 +325,8 @@ function validarNombre(){
             <li style="list-style: none;">message: Nombre Obligatorio</li>
         `;
         document.getElementById("error-name").innerHTML = "<p>Nombre Obligatorio</p>";
-
+        document.getElementById("name").classList.add('invalid');
+        document.getElementById("name").classList.remove('valid');
     }
     else if(nombre.length > 100){
         template_bar += `
@@ -333,6 +334,11 @@ function validarNombre(){
             <li style="list-style: none;">message: Nombre muy largo</li>
         `;
         document.getElementById("error-nombre").innerHTML = "<p>Nombre muy largo</p>";
+        document.getElementById("name").classList.add('invalid');
+        document.getElementById("name").classList.remove('valid');
+    }else{
+        document.getElementById("name").classList.add('valid');
+        document.getElementById("name").classList.remove('invalid');
     }
     $('#product-result').show();
     $("#container").html(template_bar);
@@ -348,6 +354,11 @@ function validarMarca(){
         <li style="list-style: none;">message: Marca Obligatortio</li>
         `;
         document.getElementById("error-marca").innerHTML = "<p>Marca Obligatortio</p>";
+        document.getElementById("marca").classList.add('invalid');
+        document.getElementById("marca").classList.remove('valid');
+    }else{
+        document.getElementById("marca").classList.add('valid');
+        document.getElementById("marca").classList.remove('invalid');
     }
     $('#product-result').show();
     $("#container").html(template_bar);
@@ -364,7 +375,11 @@ function validarModelo(){
         <li style="list-style: none;">message: El modelo es obligatorio, debe ser alfanumérico y maximo 25 caracteres.</li>
         `;
         document.getElementById("error-modelo").innerHTML = "<p>El modelo es obligatorio, debe ser alfanumérico y maximo 25 caracteres.</p>";
-
+        document.getElementById("modelo").classList.add('invalid');
+        document.getElementById("modelo").classList.remove('valid');
+    }else{
+        document.getElementById("modelo").classList.add('valid');
+        document.getElementById("modelo").classList.remove('invalid');
     }
     $('#product-result').show();
     $("#container").html(template_bar);
@@ -380,7 +395,8 @@ function validarPrecio(){
         <li style="list-style: none;">message: Precio Obligatortio</li>
         `;
         document.getElementById("error-precio").innerHTML = "<p>Precio Obligatortio</p>";
-
+        document.getElementById("precio").classList.add('invalid');
+        document.getElementById("precio").classList.remove('valid');
     }
     else if(precio <= 99.99){
         template_bar += `
@@ -388,8 +404,12 @@ function validarPrecio(){
         <li style="list-style: none;">message: Debe ser mayor a 99.9</li>
         `;
         document.getElementById("error-precio").innerHTML = "<p>Debe ser mayor a 99.99</p>";
-
-    } 
+        document.getElementById("precio").classList.add('invalid');
+        document.getElementById("precio").classList.remove('valid');
+    }else{
+        document.getElementById("precio").classList.add('valid');
+        document.getElementById("precio").classList.remove('invalid');
+    }
     $('#product-result').show();
     $("#container").html(template_bar);
 }
@@ -403,6 +423,11 @@ function validarDetalles(){
         <li style="list-style: none;">message: Debe tener 250 caracteres o menos</li>
         `;
         document.getElementById("error-detalles").innerHTML = "<p>Debe tener 250 caracteres o menos.</p>";
+        document.getElementById("detalles").classList.add('invalid');
+        document.getElementById("detalles").classList.remove('valid');
+    }else{
+        document.getElementById("detalles").classList.add('valid');
+        document.getElementById("detalles").classList.remove('invalid');
     }
     $('#product-result').show();
     $("#container").html(template_bar);
@@ -417,7 +442,8 @@ function validarUnidades(){
         <li style="list-style: none;">message: Unidades Obligatortio</li>
         `;
         document.getElementById("error-unidades").innerHTML = "<p>Unidades Obligatortio</p>";
-
+        document.getElementById("unidades").classList.add('invalid');
+        document.getElementById("unidades").classList.remove('valid');
     }
     else if(unidades < 0){
         template_bar += `
@@ -425,7 +451,12 @@ function validarUnidades(){
         <li style="list-style: none;">message: Debe ser mayor o igual a 0</li>
         `;
         document.getElementById("error-unidades").innerHTML = "<p>Debe ser mayor o igual a 0</p>";
-    } 
+        document.getElementById("unidades").classList.add('invalid');
+        document.getElementById("unidades").classList.remove('valid');
+    }else{
+        document.getElementById("unidades").classList.add('valid');
+        document.getElementById("unidades").classList.remove('invalid');
+    }
     $('#product-result').show();
     $("#container").html(template_bar);
 }
