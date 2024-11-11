@@ -5,6 +5,11 @@
     <title>ProductApp</title>
     <!-- BOOTSTRAP 4  -->
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
   </head>
   <body>
 
@@ -35,13 +40,13 @@
                   <fieldset>
                     <ul>
                       <li>
-                        <label for="nombre">Nombre:</label>
-                        <input class="form-control" type="text" id="name" placeholder="Nombre de producto">
-                        <div id="error-marca" class="error"></div>
+                        <label for="name">Nombre:</label>
+                        <input class="form-control" type="text" id="name" onblur="validarNombre()" placeholder="Nombre de producto">
+                        <div id="error-name" class="error"></div>
                       </li>
                       <li>
                         <label for="marca">Marca:</label>
-                        <select class="form-control" id="marca" name="marca">
+                        <select id="marca" name="marca" onblur="validarMarca()">
                             <option value="">Seleccione Marca</option>
                             <option value="DeWalt">DeWalt</option>
                             <option value="IUSA">IUSA</option>
@@ -55,22 +60,22 @@
                       </li>
                       <li>
                         <label for="modelo">Modelo:</label>
-                        <input class="form-control" type="text" id="modelo" name="modelo">
+                        <input type="text" id="modelo" name="modelo" onblur="validarModelo()">
                         <div id="error-modelo" class="error"></div>
                       </li>
                       <li>
                         <label for="precio">Precio:</label>
-                        <input class="form-control" type="number" id="precio" name="precio">
+                        <input type="number" id="precio" name="precio" onblur="validarPrecio()">
                         <div id="error-precio" class="error"></div>            
                       </li>
                       <li>
                         <label for="detalles">Detalles:</label>
-                        <textarea class="form-control" id="detalles" name="detalles" maxlength="250" rows="4" cols="60" placeholder="máx. 250 caracteres"></textarea>
+                        <textarea id="detalles" name="detalles" onblur="validarDetalles()" maxlength="250"  placeholder="máx. 250 caracteres"></textarea>
                         <div id="error-detalles" class="error"></div>
                       </li> 
                       <li>
                         <label for="unidades">Unidades:</label>
-                        <input class="form-control" type="number" id="unidades" name="unidades">
+                        <input type="number" id="unidades" name="unidades" onblur="validarUnidades()">
                         <div id="error-unidades" class="error"></div>
                       </li>         
                       <li>
@@ -78,15 +83,14 @@
                       <!--
                         <input type="file" name="imagen" id="imagen" accept="image/png, image/jpeg">
                       -->
-                        <input class="form-control" type="text" id="imagen" name="imagen">
+                        <input type="text" id="imagen" name="imagen" onblur="validarImagen()">
                       </li>
                     </ul>
-                  </fieldset> 
+                  </fieldset>
                 </div>
-                <div class="form-group">
-                  <!--<textarea class="form-control" id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea-->
-                   
-                </div>
+                <!--div class="form-group">
+                  <textarea class="form-control" id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>
+                </div-->
                 <input type="hidden" id="productId">
                 <button class="btn btn-primary btn-block text-center" type="submit">
                   Agregar Producto
