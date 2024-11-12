@@ -1,4 +1,4 @@
-<!--?php
+<?php
 namespace TECWEB\MYAPI;
 
 use TECWEB\MYAPI\DataBase;
@@ -77,4 +77,4 @@ class Read extends DataBase{
     }
 }
 
-?-->
+?>

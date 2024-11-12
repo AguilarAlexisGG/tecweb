@@ -1,4 +1,4 @@
-<?php
+<!--?php
 namespace TECWEB\MYAPI;
 
 use TECWEB\MYAPI\DataBase;
@@ -7,11 +7,10 @@ require_once __DIR__ . '/DataBase.php';
 class Products extends DataBase {
     private $data;
 
-    public function __construct($db) {
+    public function __construct($db, $user='root', $pass='sapo123') {
         $this->data = array();
-        parent::__construct($db, $user='root', $pass='sapo123');
+        parent::__construct($db, $user, $pass);
     }
-
 
     public function add($jsonOBJ) {
         // SE OBTIENE LA INFORMACIÓN DEL PRODUCTO ENVIADA POR EL CLIENTE
@@ -41,8 +40,6 @@ class Products extends DataBase {
         }
     }
 
-
-
     public function delete($id) {
         // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
         $this->data = array(
@@ -62,7 +59,6 @@ class Products extends DataBase {
             $this->conexion->close();
         } 
     }
-
 
     public function edit($jsonOBJ) {
         // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
@@ -87,7 +83,6 @@ class Products extends DataBase {
         }
     }
 
-    
     public function list() {
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
         if ( $result = $this->conexion->query("SELECT * FROM productos WHERE eliminado = 0") ) {
@@ -108,7 +103,6 @@ class Products extends DataBase {
         }
         $this->conexion->close();
     }
-
 
     public function search($search) {
         // SE VERIFICA HABER RECIBIDO EL ID
@@ -135,7 +129,6 @@ class Products extends DataBase {
         }
     }
 
-
     public function single($id) {
         if( isset($id) ) {
             // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
@@ -157,13 +150,11 @@ class Products extends DataBase {
         }
     }
 
-
     public function getData() {
         // SE HACE LA CONVERSIÓN DE ARRAY A JSON
         return json_encode($this->data, JSON_PRETTY_PRINT);
     }
-
 }
 
 //$productos = new Productos();
-?>
+?-->

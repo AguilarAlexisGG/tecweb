@@ -3,20 +3,26 @@ namespace TECWEB\MYAPI;
 
 abstract class DataBase {
     protected $conexion;
-    //protected $data;
+    protected $data;
 
-    public function __construct($db, $user, $pass) {
+    public function __construct($db, $user = 'root', $pass='sapo123') {
         $this->conexion = @mysqli_connect(
             'localhost',
             $user,
             $pass,
             $db
         );
-        //$this->data = array();
-
+        $this->data = array();
+    
+        /**
+         * NOTA: si la conexión falló $conexion contendrá false
+         **/
         if(!$this->conexion) {
             die('¡Base de datos NO conextada!');
         }
+        /*else {
+            echo 'Base de datos encontrada';
+        }*/
     }
 
     public function getData() {

@@ -164,7 +164,15 @@ $(document).ready(function(){
             const element = $(this)[0].activeElement.parentElement.parentElement;
             const id = $(element).attr('productId');
             $.post('./backend/product-delete.php', {id}, (response) => {
-                $('#product-result').hide();
+                let respuesta = JSON.parse(response);
+                let template_bar = '';
+                template_bar += `
+                        <li style="list-style: none;">status: ${respuesta.status}</li>
+                        <li style="list-style: none;">message: ${respuesta.message}</li>
+                `;
+                $('#product-result').show();
+                $('#container').html(template_bar);
+                //$('#product-result').hide();
                 listarProductos();
             });
         }

@@ -1,4 +1,4 @@
-<!--?php
+<?php
 namespace TECWEB\MYAPI;
 
 use TECWEB\MYAPI\DataBase;
@@ -34,4 +34,4 @@ class Update extends DataBase {
     
 }
 
-?-->
+?>

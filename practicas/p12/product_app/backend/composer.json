@@ -1,5 +1,7 @@
 {
     "autoload": {
-    "psr-4": {"MiNamespace\\": "mi_carpeta/"}
-}
+        "psr-4": {
+            "TECWEB\\MYAPI\\": "myapi/"
+        }
+    }
 }
