@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogovod>
+    <cuenta corro="alexis.aguilarga@alumno.buap.mx">
+        <perfiles>
+            <perfil usuario="Alexis" idioma="Español" />
+            <perfil usuario="Meli" idioma="Ingles" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Sespenso">
+                <titulo nombre="Los Otros" duracion="104min" />
+                <titulo nombre="El Sexto Sentido" duracion="107min"/>
+                <titulo nombre="Fragmentado" duracion="117min"/>
+                <titulo nombre="El Cisne Negro" duracion="108min"/>
+            </genero>
+            <genero nombre="Paranormal">
+                <titulo nombre="El Conjuro" duracion="112min" />
+                <titulo nombre="Insidious" duracion="103min" />
+                <titulo nombre="Siniestro" duracion="110min" />
+                <titulo nombre="Hereditary" duracion="127min" />
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Deportes">
+                <titulo nombre="Programa1" duracion="40min" />
+                <titulo nombre="Programa2" duracion="50min" />
+                <titulo nombre="Programa3" duracion="40min" />
+                <titulo nombre="Programa4" duracion="50min" />
+            </genero>
+            <genero nombre="Noticias">
+                <titulo nombre="Programa1" duracion="40min" />
+                <titulo nombre="Programa2" duracion="50min" />
+                <titulo nombre="Programa3" duracion="40min" />
+                <titulo nombre="Programa4" duracion="50min" />
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
