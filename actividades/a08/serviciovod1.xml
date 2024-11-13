@@ -1,0 +1,32 @@
+
+<catalogovod>
+    <cuenta>
+        <correo></correo>
+        <perfiles>
+            <perfil1>
+                <usuario></usuario>
+                <idioma></idioma>
+            </perfil1>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre></nombre>
+                <titulo>
+                    <nombre></nombre>
+                    <duracion></duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre></nombre>
+                <titulo>
+                    <nombre></nombre>
+                    <duracion></duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
