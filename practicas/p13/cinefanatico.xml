@@ -1,1 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="1029384756" visitas="10" puntos="220">
+        <nombre>Alexis Garcia</nombre>
+        <correo>alexis_123@gmail.com</correo>
+        <telefono tipo="movil">2221102389</telefono>
+    </tarjeta>
+</cinefanatico>

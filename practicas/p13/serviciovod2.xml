@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod.dtd">
+<CatalogoVOD>
+    <cuenta correo="tony.stark@gmail.com">
+        <perfiles>
+            <perfil usuario="Robert Downey Jr." idioma="English"/>
+            <perfil usuario="Chris Evans" idioma="English"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Super Héroes">
+                <titulo duracion="02:04:00">Capitán América: El primer vengador.</titulo>
+                <titulo duracion="02:06:00">Iron Man: el hombre de hierro</titulo>
+            </genero>
+            <genero nombre="Terror">
+                <titulo duracion="01:51:00">Halloween: la noche final</titulo>
+                <titulo duracion="01:42:00">El teléfono negro</titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo duracion="00:40:00">Friends</titulo>
+                <titulo duracion="00:40:00">The Big Bang Theory</titulo>
+            </genero>
+            <genero nombre="Drama Criminal">
+                <titulo duracion="0s0:45:00">Criminal Minds</titulo>
+                <titulo duracion="00:50:00">Dahmer</titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
