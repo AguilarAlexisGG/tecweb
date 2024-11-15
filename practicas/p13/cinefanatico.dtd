@@ -1,0 +1,14 @@
+<!ELEMENT cinefanatico (tarjeta+)>
+<!ELEMENT tarjeta (nombre, correo,
+    (telefono,telefono?)?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT correo (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ATTLIST tarjeta
+    noserie CDATA #REQUIRED
+    visitas CDATA #REQUIRED
+    puntos CDATA #REQUIRED
+>
+<!ATTLIST telefono
+    tipo (movil|casa) #REQUIRED
+>
