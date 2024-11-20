@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="spotify_v2.xsd">    
+    <Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <Nombre>John Wick</Nombre>
+        <Correo>john011@gmail.com</Correo>
+        <Telefono tipo="movil">000-123-4567</Telefono>
+    </Cuenta>
+    <Cuenta id="2" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <Nombre>Alexis</Nombre>
+        <Correo>alexis@gmail.com</Correo>
+        <Telefono tipo="movil">000-123-4567</Telefono>
+    </Cuenta>
+    <Cuenta id="3" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <Nombre>Gabriel</Nombre>
+        <Correo>gabriel@gmail.com</Correo>
+        <Telefono tipo="movil">000-123-4567</Telefono>
+    </Cuenta>
+</Spotify>

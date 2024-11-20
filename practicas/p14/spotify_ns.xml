@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tw:Spotify xmlns:tw="http://tecnologiasweb.com.mx" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://tecnologiasweb.com.mx spotify_ns.xsd">  
+
+    <tw:Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <tw:Nombre>John Wick</tw:Nombre>
+        <tw:Correo>john011@gmail.com</tw:Correo>
+        <tw:Telefono tipo="movil">000-123-4567</tw:Telefono>
+    </tw:Cuenta>
+    <tw:Cuenta id="2" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <tw:Nombre>Alexis</tw:Nombre>
+        <tw:Correo>alexis@gmail.com</tw:Correo>
+        <tw:Telefono tipo="movil">000-123-4567</tw:Telefono>
+    </tw:Cuenta>
+    <tw:Cuenta id="3" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <tw:Nombre>Gabriel</tw:Nombre>
+        <tw:Correo>gabriel@gmail.com</tw:Correo>
+        <tw:Telefono tipo="movil">000-123-4567</tw:Telefono>
+    </tw:Cuenta>
+
+</tw:Spotify>

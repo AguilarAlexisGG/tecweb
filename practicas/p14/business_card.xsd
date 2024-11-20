@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:b="http://businesscard.org"
+    targetNamespace="http://businesscard.org"
+    elementFormDefault="qualified">
+
+    <element name="card" type="b:card_type"/>
+    <element name="name" type="string"/>
+    <element name="title" type="string"/>
+    <element name="email" type="string"/>
+    <element name="phone" type="string"/>
+    <element name="logo" type="b:logo_type"/>
+
+    <attribute name="uri" type="anyURI"/>
+
+    <complexType name="card_type">
+        <sequence>
+            <element ref="b:name"/>
+            <element ref="b:title"/>
+            <element ref="b:email"/>
+            <element ref="b:phone" minOccurs="0"/>
+            <element ref="b:logo" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="logo_type">
+        <attribute ref="b:uri" use="required"/>
+    </complexType>
+
+</schema>
