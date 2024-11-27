@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Catalogovod SYSTEM "serviciovod_ep.dtd">
+
+<Catalogovod>
+    <cuenta correo="alexis.aguilarga@alumno.buap.mx">
+        <perfiles>
+            <perfil usuario="Alexis" idioma="Español" />
+            <perfil usuario="Meli" idioma="Ingles" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Suspenso">
+                <titulo duracion="01:44:00">Los otros</titulo>
+                <titulo duracion="01:47:00">El Sexto Sentido</titulo>
+                <titulo duracion="01:57:00">Fragmentado</titulo>
+                <titulo duracion="01:48:00">El Cisne Negro</titulo>
+            </genero>
+            <genero nombre="Paranormal">
+                <titulo duracion="01:52:00">El Conjuro</titulo>
+                <titulo duracion="01:43:00">Insidious</titulo>
+                <titulo duracion="01:50:00">Siniestro</titulo>
+                <titulo duracion="02:07:00">Hereditary</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Sobrenatural">
+                <titulo duracion="00:50:00">Dark</titulo>
+                <titulo duracion="00:50:00">Stranger Things</titulo>
+            </genero>
+            <genero nombre="Crimen">
+                <titulo duracion="01:00:00">Peaky Blinders</titulo>
+                <titulo duracion="00:50:00">Breaking Bad</titulo>
+            </genero>
+        </series>
+    </contenido>
+</Catalogovod>
