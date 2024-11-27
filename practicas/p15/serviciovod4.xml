@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Catalogovod SYSTEM "serviciovod_ep.dtd">
-
-<Catalogovod>
+<?xml-stylesheet type="text/xsl" href="catalogovod.xsl"?>
+<Catalogovod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="serviciovod.xsd">
     <cuenta correo="alexis.aguilarga@alumno.buap.mx">
         <perfiles>
             <perfil usuario="Alexis" idioma="Español" />
