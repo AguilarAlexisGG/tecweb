@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xsd:element name="Catalogovod">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="cuenta">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="perfiles">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="perfil" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:attribute name="usuario" type="xsd:string" use="required" />
+                                                <xsd:attribute name="idioma" type="xsd:string" use="required" />
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute name="correo" type="xsd:string" use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="contenido">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="peliculas">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="genero" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="titulo" maxOccurs="unbounded">
+                                                        <xsd:complexType>
+                                                            <xsd:simpleContent>
+                                                                <xsd:extension base="xsd:string">
+                                                                    <xsd:attribute name="duracion" type="xsd:string" use="required"/>
+                                                                </xsd:extension>
+                                                            </xsd:simpleContent>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                                <xsd:attribute name="nombre" type="xsd:string" use="required" />
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="region" use="required"> 
+                                        <xsd:simpleType> 
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="MEX"/>
+                                                <xsd:enumeration value="USA"/>
+                                                <xsd:enumeration value="ESP"/>
+                                                <xsd:enumeration value="ARG"/>
+                                                <xsd:enumeration value="KOR"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="series">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="genero" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="titulo" maxOccurs="unbounded">
+                                                        <xsd:complexType>
+                                                            <xsd:simpleContent>
+                                                                <xsd:extension base="xsd:string">
+                                                                    <xsd:attribute name="duracion" type="xsd:string" use="required"/>
+                                                                </xsd:extension>
+                                                            </xsd:simpleContent>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                                <xsd:attribute name="nombre" type="xsd:string" use="required" />
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="region" use="required">
+                                        <xsd:simpleType> 
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="MEX"/>
+                                                <xsd:enumeration value="USA"/>
+                                                <xsd:enumeration value="ESP"/>
+                                                <xsd:enumeration value="ARG"/>
+                                                <xsd:enumeration value="KOR"/>
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
