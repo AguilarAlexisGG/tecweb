@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://starfire.com/vod"
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:vod="http://starfire.com/vod">
+    
+    <xsd:simpleType name="correoType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[^@]+@[^\.]+\..+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:attributeGroup name="perfilAttribute">
+        <xsd:attribute name="usuario" use="required"/>
+        <xsd:attribute name="idioma" use="required"/>
+    </xsd:attributeGroup>
+    
+    <xsd:complexType name="perfilType">
+        <xsd:attributeGroup ref="vod:perfilAttribute"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="perfilesType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="perfil" type="vod:perfilType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="cuentaType">
+        <xsd:sequence>
+            <xsd:element name="perfiles" type="vod:perfilesType"/>
+        </xsd:sequence>
+        <xsd:attribute name="correo" type="vod:correoType" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="CatalogoVODtype">
+        <xsd:sequence>
+            <xsd:element name="cuenta" type="vod:cuentaType"/>
+            <xsd:any/>
+        </xsd:sequence>
+        <xsd:attribute name="Version" type="xsd:decimal" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:element name="CatalogoVOD" type="vod:CatalogoVODtype"/>
+</xsd:schema>

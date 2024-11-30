@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://starfire.com/vod/menu" elementFormDefault="qualified"
+    attributeFormDefault="unqualified" xmlns:menu="http://starfire.com/vod/menu">
+    
+    <xsd:simpleType name="region">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ARG"/>
+            <xsd:enumeration value="ESP"/>
+            <xsd:enumeration value="KOR"/>
+            <xsd:enumeration value="MEX"/>
+            <xsd:enumeration value="USA"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="tituloType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="duracion" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="generoType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="titulo" type="menu:tituloType"/>
+        </xsd:sequence>
+        <xsd:attribute name="nombre" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="programasType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="genero" type="menu:generoType"/>
+        </xsd:sequence>
+        <xsd:attribute name="region" type="menu:region" use="required"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="contenidoType">
+        <xsd:sequence>
+            <xsd:element name="peliculas" type="menu:programasType"/>
+            <xsd:element name="series" type="menu:programasType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="contenido" type="menu:contenidoType"/>
+</xsd:schema>

@@ -13,16 +13,12 @@
         $lista = '';
         foreach ($errors as $error)
         {
-        $lista = $lista.'['.($noError++).']: '.$error->message.' ';
+            $lista = $lista.'['.($noError++).']: '.$error->message.' ';
         }
         echo $lista;
-
+        echo("Error en la validacion"); 
         die();
     }
-    
-/*
-    header('Content-Type: text/xml'); // establece el tipo de contenido como xml 
-    echo $xml->saveXML(); // imprime el xml 
-*/
-
+    echo("Validacion Exitosa");
+    $xml->save("Ejercicio1.xml");    
 ?>

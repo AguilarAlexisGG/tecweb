@@ -25,7 +25,7 @@
                 <xsd:element name="contenido">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="peliculas">
+                            <xsd:element name="peliculas"   >
                                 <xsd:complexType>
                                     <xsd:sequence>
                                         <xsd:element name="genero" maxOccurs="unbounded">

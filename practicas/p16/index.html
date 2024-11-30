@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        ol, ul { 
+        list-style-type: none;
+        }
+      </style>
+    <title>Servicio VOD</title>
+</head>
+<body>
+    <h1>Inserción de datos VOD</h1>
+    <form action="serviciovod_add.php" method="post">
+        <fieldset>
+            <legend>Información de Perfil</legend>
+    
+            <ul>
+                <li><label>Usuario:</label> <input type="text" name="usuario"></li>
+                <li><label>Idioma :</label>
+                    <select name="size" size="1">
+                        <option value="french">French</option>
+                        <option value="english">English</option>
+                        <option selected="selected" value="spanish">Spanish</option>
+                    </select>
+                </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Información de Contenido</legend>
+    
+            <fieldset>
+                <legend>Peliculas</legend>
+        
+                <ul>
+                    <li><label>Genero :</label> <input type="text" name="pel-genero"></li>
+                    <li>
+                        <label>Titulo 1:</label> <input type="text" name="pel-titulo1">
+                        <label>duración:</label> <input type="text" name="pel-duracion1">
+                    </li>
+                    <li>
+                        <label>Titulo 2:</label> <input type="text" name="pel-titulo2">
+                        <label>duración:</label> <input type="text" name="pel-duracion2">
+                    </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <legend>Series</legend>
+        
+                <ul>
+                    <li><label>Genero :</label> <input type="text" name="ser-genero"></li>
+                    <li>
+                        <label>Titulo 1:</label> <input type="text" name="ser-titulo1">
+                        <label>duración:</label> <input type="text" name="ser-duracion1">
+                    </li>
+                    <li>
+                        <label>Titulo 2:</label> <input type="text" name="ser-titulo2">
+                        <label>duración:</label> <input type="text" name="ser-duracion2">
+                    </li>
+                </ul>
+              </fieldset>
+          </fieldset>
+
+          <p>
+            <input type="submit" value="Agregar">
+            <input type="reset">
+          </p>
+    </form>
+</body>
+</html>

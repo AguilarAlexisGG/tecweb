@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vod:CatalogoVOD Version="2.0"
+    xmlns:vod="http://starfire.com/vod"
+    xmlns:menu="http://starfire.com/vod/menu"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://starfire.com/vod serviciovod_ns_vod.xsd http://starfire.com/vod/menu serviciovod_ns_menu.xsd">
+    <vod:cuenta correo="carlos.conderl@correo.buap.mx">
+        <vod:perfiles>
+            <vod:perfil usuario="NeoJC" idioma="Español"/>
+            <vod:perfil usuario="Brother" idioma="Español"/>
+        </vod:perfiles>
+    </vod:cuenta>
+    <menu:contenido>
+        <menu:peliculas region="MEX">
+            <menu:genero nombre="Super Héroes">
+                <menu:titulo duracion="2:37">ETERNALS</menu:titulo>
+                <menu:titulo duracion="2:04">CAPITAN AMÉRICA, EL 1ER VENGADOR</menu:titulo>
+            </menu:genero>
+            <menu:genero nombre="Animadas">
+                <menu:titulo duracion="1:40">RED</menu:titulo>
+                <menu:titulo duracion="1:47">RAYA</menu:titulo>
+            </menu:genero>
+        </menu:peliculas>
+        <menu:series region="USA">
+            <menu:genero nombre="Comedia">
+                <menu:titulo duracion="0:30">FRIENDS</menu:titulo>
+                <menu:titulo duracion="0:40">HOW I MEET YOUR MOTHER</menu:titulo>
+            </menu:genero>
+            <menu:genero nombre="Suspenso">
+                <menu:titulo duracion="0:30">Stranger Things</menu:titulo>
+                <menu:titulo duracion="0:45">Criminal Minds</menu:titulo>
+            </menu:genero>
+        </menu:series>
+    </menu:contenido>
+</vod:CatalogoVOD>
